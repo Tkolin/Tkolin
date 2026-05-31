@@ -33,7 +33,7 @@
 ![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
 
 **Бэкенд:** FastAPI, Django, Laravel, REST + GraphQL + gRPC, WebSocket, gRPC streaming (Yellowstone/Geyser)
-**Данные и инфра:** PostgreSQL, ClickHouse, MySQL, Redis, RabbitMQ, Elasticsearch, Docker, CI/CD, nginx, Grafana
+**Данные и инфра:** PostgreSQL, ClickHouse, MySQL, Redis, RabbitMQ, Elasticsearch, S3, Docker, CI/CD, nginx, Grafana
 **Фронтенд (при необходимости):** Vue 3 / Nuxt, React, Feature-Sliced Design, расширения на WXT
 **AI:** интеграция GPT/LLM в продукт, разработка с Claude Code и Copilot
 
@@ -43,8 +43,8 @@
 
 **Рекрутинг-платформа, владелец бэкенда и фуллстек** *(2024 - сейчас)*
 Боевая система: ~5k пользователей, ~1k MAU, база на 50+ млн записей.
-- Архитектура: веб-бэкенд на Django, за ним микросервисы на FastAPI (Postgres, Redis, RabbitMQ), к которым он обращается. Спроектировал и вывел в прод сервисы мониторинга изменений кандидатов.
-- Аналитику складывал в ClickHouse и выводил статистику в Grafana.
+- Архитектура: веб-бэкенд на Django, за ним микросервисы на FastAPI (Postgres, Redis, RabbitMQ). Django общается с ними по REST и через очереди RabbitMQ. Спроектировал и вывел в прод сервисы мониторинга изменений кандидатов.
+- Аналитику складывал в ClickHouse, статистику выводил в Grafana, файлы хранил в S3.
 - Сделал сервис истории резюме на diff-подходе: хранит разницы, а не снимки, считает на стороне SQL, поэтому занимает кратно меньше места.
 - Помог реструктурировать серверную часть и сократить расходы на инфраструктуру примерно на 40%.
 - Перестроил унаследованный фронт: с двух монолитных страниц на Feature-Sliced Design, с JS на TypeScript. Переписал парсер с Selenium на Playwright, расширение перевёл на WXT + Vue.
