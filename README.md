@@ -32,7 +32,7 @@
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
 ![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
 
-**Бэкенд:** FastAPI, Django, Laravel, REST + GraphQL + gRPC, WebSocket, gRPC streaming (Yellowstone/Geyser)
+**Бэкенд:** FastAPI, Django, Laravel, REST + GraphQL + gRPC, WebSocket, gRPC streaming (Yellowstone/Geyser), авторизация (JWT, OAuth через Telegram)
 **Данные и инфра:** PostgreSQL, ClickHouse, MySQL, Redis, RabbitMQ, Elasticsearch, S3, Docker, CI/CD, nginx, Grafana
 **Фронтенд (при необходимости):** Vue 3 / Nuxt, React, Feature-Sliced Design, расширения на WXT
 **AI:** интеграция GPT/LLM в продукт, разработка с Claude Code и Copilot
