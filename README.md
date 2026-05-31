@@ -20,6 +20,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat&logo=django&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
 ![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat&logo=redis&logoColor=white)
 ![RabbitMQ](https://img.shields.io/badge/RabbitMQ-FF6600?style=flat&logo=rabbitmq&logoColor=white)
@@ -31,8 +32,8 @@
 ![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=vuedotjs&logoColor=white)
 ![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat&logo=solana&logoColor=white)
 
-**Бэкенд:** FastAPI, Laravel, REST + GraphQL + gRPC, WebSocket, gRPC streaming (Yellowstone/Geyser)
-**Данные и инфра:** PostgreSQL, MySQL, Redis, RabbitMQ, Elasticsearch, Docker, CI/CD, nginx
+**Бэкенд:** FastAPI, Django, Laravel, REST + GraphQL + gRPC, WebSocket, gRPC streaming (Yellowstone/Geyser)
+**Данные и инфра:** PostgreSQL, ClickHouse, MySQL, Redis, RabbitMQ, Elasticsearch, Docker, CI/CD, nginx, Grafana
 **Фронтенд (при необходимости):** Vue 3 / Nuxt, React, Feature-Sliced Design, расширения на WXT
 **AI:** интеграция GPT/LLM в продукт, разработка с Claude Code и Copilot
 
@@ -42,7 +43,8 @@
 
 **Рекрутинг-платформа, владелец бэкенда и фуллстек** *(2024 - сейчас)*
 Боевая система: ~5k пользователей, ~1k MAU, база на 50+ млн записей.
-- Спроектировал и вывел в прод микросервисы с нуля (FastAPI, Postgres, Redis, RabbitMQ) для real-time мониторинга изменений кандидатов.
+- Архитектура: веб-бэкенд на Django, за ним микросервисы на FastAPI (Postgres, Redis, RabbitMQ), к которым он обращается. Спроектировал и вывел в прод сервисы мониторинга изменений кандидатов.
+- Аналитику складывал в ClickHouse и выводил статистику в Grafana.
 - Сделал сервис истории резюме на diff-подходе: хранит разницы, а не снимки, считает на стороне SQL, поэтому занимает кратно меньше места.
 - Помог реструктурировать серверную часть и сократить расходы на инфраструктуру примерно на 40%.
 - Перестроил унаследованный фронт: с двух монолитных страниц на Feature-Sliced Design, с JS на TypeScript. Переписал парсер с Selenium на Playwright, расширение перевёл на WXT + Vue.
