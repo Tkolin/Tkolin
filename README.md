@@ -35,7 +35,7 @@
 **Языки:** Python, SQL, TypeScript / JavaScript, PHP, C#
 **Бэкенд:** FastAPI, Django, Celery / Celery Beat, Laravel, REST, GraphQL (Apollo), gRPC (Protobuf), WebSocket, gRPC streaming (Yellowstone/Geyser), ORM (SQLAlchemy, Django ORM, Eloquent), миграции схемы БД, идемпотентность, вебхуки, rate limiting, валидация данных, документация API (Swagger/OpenAPI, GraphQL playground), Telegram-боты
 **Данные:** PostgreSQL, ClickHouse, MySQL, MS SQL, Redis, Elasticsearch, RabbitMQ, шифрование данных, проектирование и оптимизация БД, индексы, курсорная пагинация, EXPLAIN ANALYZE
-**Инфра / DevOps:** Docker, Docker Compose, CI/CD (GitHub Actions), AWS, Yandex Cloud, S3, nginx, DNS, Cloudflare CDN, HTTP/2, SSL / Let's Encrypt, бэкапы, firewall, systemd, health/readiness-проверки, развёртывание VPS, мониторинг и алертинг (Grafana)
+**Инфра / DevOps:** Docker, Docker Compose, Docker Swarm (оркестрация, overlay/VIP-сети, routing mesh, реплики, rolling-update, configs/secrets), CI/CD (GitHub Actions), AWS, Yandex Cloud, S3, nginx, DNS, Cloudflare CDN, HTTP/2, SSL / Let's Encrypt, бэкапы, firewall, systemd, health/readiness-проверки, развёртывание VPS, мониторинг и алертинг (Grafana)
 **Тестирование / QA:** pytest с моками, юнит- и интеграционные тесты, e2e и автоматизация браузера (Playwright, Selenium)
 **Авторизация:** JWT, OAuth, вход через Telegram
 **AI / LLM:** интеграция LLM в продукт, универсальный сервис под несколько провайдеров (OpenAI, DeepSeek, Gemini), локальные модели через Ollama, разработка с Claude Code и Copilot
@@ -58,6 +58,7 @@
 - Ускорил отдачу страниц с ~20 с до ~6 с: оптимизировал работу с базой на 50+ млн записей (анализ планов через EXPLAIN ANALYZE, индексы, курсорная пагинация) и добавил кеш на тяжёлые ручки.
 - Прикрутил LLM в продукт: универсальный сервис под несколько провайдеров (OpenAI, DeepSeek, Gemini), локальные модели через Ollama для удешевления.
 - DevOps: VPS с нуля (firewall, systemd, SSL), CI/CD на GitHub Actions, Docker Compose, Cloudflare CDN. Помог реструктурировать серверную часть и сократить расходы на инфраструктуру примерно на 40%.
+- Поднял оркестрацию на Docker Swarm: два кластера по два узла, 32 сервиса под управлением. Изолированные VIP-сети поверх overlay с service discovery и балансировкой через routing mesh, реплики ключевых сервисов с авто-перезапуском, rolling-обновления и rollback без простоя, секреты в Docker secrets.
 - Перестроил унаследованный фронт: с двух монолитных страниц на Feature-Sliced Design, с JS на TypeScript. Переписал парсер с Selenium на Playwright: автоматизировал вход в аккаунты (экономило до часа в день), сессии между запусками, headless, скорость с ~2 с на запрос до ~3 rps. Расширение перевёл на WXT + Vue (Manifest V3, инъекция в DOM сайтов, опубликовано в Chrome Web Store).
 - Генерация документов и экспорт через LibreOffice.
 
